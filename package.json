@@ -1,5 +1,7 @@
 {
   "name": "codaisseurup",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "holderjs": "^2.9.4"
+  }
 }

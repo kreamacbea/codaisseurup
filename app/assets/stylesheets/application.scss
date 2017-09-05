@@ -1,2 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.hero-home {
+  background: url('images/3309.jpg') top center no-repeat;
+  background-size: cover;
+  background-origin: border-box;
+  width: 100%;
+  height: auto;
+}
+
+.intro {
+  margin: 10% auto;
+}
