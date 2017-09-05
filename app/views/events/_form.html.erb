@@ -1,8 +1,8 @@
 <%= form_for @event do |f| %>
 
   <div class="form-group">
-    <label>Number of Participants</label>
-    <%= f.select :capacity, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6+", 6]], prompt: "Select maximum number of participants", class: "form-control" %>
+    <label>Name</label>
+    <%= f.text_area :name, placeholder: "Type the name of your event", class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -12,7 +12,20 @@
 
   <div class="form-group">
     <label>Location</label>
-    <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+    <%= f.text_field :location, placeholder: "The location of your event", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <div class="input-group">
+      <div class="input-group-addon">€</div>
+      <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Capacity</label>
+    <%= f.number_field :capacity, placeholder: "eg. 25", class: "form-control" %>
   </div>
 
   <label>Amenities</label>
@@ -25,14 +38,16 @@
   </div>
 
   <div class="form-group">
-    <label>Price</label>
-    <div class="input-group">
-      <div class="input-group-addon">€</div>
-      <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
-    </div>
+    <label>Start Date and Time</label>
+    <%= f.datetime_field :starts_at, class: "form-control" %>
   </div>
 
-  <label>Publish this event?</label>
+  <div class="form-group">
+    <label>End Date and Time</label>
+    <%= f.datetime_field :ends_at, class: "form-control" %>
+  </div>
+
+  <label>Post this event?</label>
 
   <div class="form-group">
     <%= f.check_box :active %> Active

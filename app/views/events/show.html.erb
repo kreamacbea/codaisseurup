@@ -1,14 +1,23 @@
 <div class="panel panel-primary">
-  <div class="panel-heading"><%= @event.listing_name %></div>
+  <div class="panel-heading">
+    <h4><%= @event.name %></h4>
+  </div>
 
   <div class="panel-body">
-
-    <p>Location: <%= @event.location %></p>
-    <p>Host: <%= @event.user.email %></p>
 
     <!-- About -->
     <h4>Description</h4>
     <p><%= @event.description %></p>
+
+    <!-- Main Info -->
+    <p>Location: <%= @event.location %></p>
+    <p>Host: <%= @event.user.email %></p>
+    <p>Price: <%= @event.price %></p>
+    <p>Capacity:
+      <%= @event.capacity %>
+      <%= @event.capacity > 1 ? "guests" : "guest" %>
+    </p>
+    <p>Date: <%= @event.starts_at %></p>
 
     <!-- Amenities -->
     <h4>Amenities</h4>
@@ -17,8 +26,18 @@
       <li><%= !@event.includes_drinks ? ("<del>Drinks</del>").html_safe : "Drinks" %></li>
     </ul>
 
+    <!-- Status -->
+    <h4>Status</h4>
+    <p><%= !@event.active ? ("<del>Unpublished</del>").html_safe : "Published" %></p>
+
   </div>
 
 </div>
+
+<!-- Themes -->
+<h4>Themes</h4>
+<% @themes.each do |theme| %>
+  <span class="label label-success"><%= theme.name %></span>
+<% end %>
 
 <%= link_to "Back", events_path, class: "btn btn-default" %>
