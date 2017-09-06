@@ -24,6 +24,6 @@ matt = User.create(email: "matt@codaisseurbnb.com", password: "abcd1234")
 
 Event.create(name: "De Geitenwollen Sokkenbreijer", description: "Leer hoe je lekkere warme wollen sokken kunt breien", location: "Den Haag", price: 24.95, capacity: 15, includes_food: true, includes_drinks: true, starts_at: 20170905190000, ends_at: 20170905210000, active: true, user: laura, themes: [learn, family, sport_and_fitness])
 
-Event.create(name: "Workshop Punnikken", description: "We gaan er lekker op los punniken in deze workshop", location: "Rijswijk", price: 7.50, capacity: 10, includes_food: false, includes_drinks: true, starts_at: 20170905140000, ends_at: 20170905170000, active: true, user: wouter, themes: [learn, family])
+Event.create(name: "Workshop Punnikken", description: "We gaan er lekker op los punniken in deze workshop", location: "Rijswijk", price: 7.50, capacity: 10, includes_food: false, includes_drinks: true, starts_at: 20170905140000, ends_at: 20170905170000, active: true, user: laura, themes: [learn, family])
 
-Event.create(name: "Het Leven van een Zakkenroller", description: "Lezing door Sjaak alias Sjakkenroller", location: "Wassenaar", price: 4.95, capacity: 25, includes_food: false, includes_drinks: false, starts_at: 20170905200000, ends_at: 20170905223000, active: true, user: matt, themes: [learn, health_and_wellbeing, tech])
+Event.create(name: "Het Leven van een Zakkenroller", description: "Lezing door Sjaak alias Sjakkenroller", location: "Wassenaar", price: 4.95, capacity: 25, includes_food: false, includes_drinks: false, starts_at: 20170905200000, ends_at: 20170905223000, active: true, user: laura, themes: [learn, health_and_wellbeing, tech])

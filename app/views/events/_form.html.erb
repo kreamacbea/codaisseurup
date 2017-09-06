@@ -47,6 +47,14 @@
     <%= f.datetime_field :ends_at, class: "form-control" %>
   </div>
 
+  <label>Themes</label>
+  <%= f.collection_check_boxes(:theme_ids, Theme.all, :id, :name) do |b| %>
+  <div class="form-group">
+    <%= b.check_box(class: "chcek_box") %>
+    <%= b.object.name %>
+  </div>
+  <% end %>
+
   <label>Post this event?</label>
 
   <div class="form-group">
