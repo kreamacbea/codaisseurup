@@ -1,14 +1,12 @@
 FactoryGirl.define do
   factory :event do
-    name              "Wadlopen"
+    name              { Faker::Lorem.words(3) }
     description       { Faker::Lorem.sentence(40) }
-    location          "Den Haag"
+    location          { Faker::Address.city }
     price             { Faker::Commerce.price }
     capacity          25
     includes_food     true
     includes_drinks   true
-    starts_at         { Faker::Commerce.datetime }
-    ends_at           { Faker::Commerce.datetime }
     user              { build(:user) }
 
     trait :active do
