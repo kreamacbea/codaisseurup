@@ -15,4 +15,5 @@ class Event < ApplicationRecord
     order :price
   end
 
+  has_many :photos
 end
