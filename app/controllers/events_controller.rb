@@ -24,8 +24,7 @@ class EventsController < ApplicationController
         @event.photos.create(image: image)
       end
 
-    if @event.save
-      redirect_to @event, notice: "Event created"
+      redirect_to edit_event_path(@event), notice: "Event created"
     else
       render :new
     end
@@ -40,13 +39,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @event.update(room_params)
+    if @event.update(event_params)
     image_params.each do |image|
       @event.photos.create(image: image)
     end
 
-    if @event.update(event_params)
-      redirect_to @event, notice: "Event updated"
+      redirect_to edit_event_path(@event), notice: "Event updated"
     else
       render :edit
     end
@@ -57,7 +55,7 @@ class EventsController < ApplicationController
   def image_params
     params[:images].present? ? params.require(:images) : []
   end
-  
+
   def set_event
     @event = Event.find(params[:id])
   end

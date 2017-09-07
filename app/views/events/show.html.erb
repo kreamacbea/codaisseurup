@@ -29,7 +29,11 @@
     <!-- Photos -->
     <h4>Photos</h4>
     <% @event.photos.each do |photo| %>
-      <%= image_tag photo.image, class: "img-event" %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= image_tag photo.image %>
+        </div>
+      </div>
     <% end %>
 
     <!-- Status -->
