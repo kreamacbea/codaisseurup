@@ -16,4 +16,6 @@ class Event < ApplicationRecord
   end
 
   has_many :photos
+  has_many :registrations, dependent: :destroy
+  has_many :guests, through: :registrations, source: :user
 end

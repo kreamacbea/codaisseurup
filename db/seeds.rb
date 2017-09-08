@@ -10,6 +10,7 @@ Theme.destroy_all
 Event.destroy_all
 Profile.destroy_all
 User.destroy_all
+Registration.destroy_all
 
 # Themes
 outdoor_and_adventure = Theme.create!(name: "Outdoor & Adventure")
@@ -40,3 +41,8 @@ photo1 = Photo.create!(remote_image_url: "https://res.cloudinary.com/db926f0zb/i
 photo2 = Photo.create!(remote_image_url: "https://res.cloudinary.com/db926f0zb/image/upload/v1504778561/3309_abjwyg.jpg", event: event_1)
 photo3 = Photo.create!(remote_image_url: "https://res.cloudinary.com/db926f0zb/image/upload/v1504778561/2291_qvkr3o.jpg", event: event_1)
 photo4 = Photo.create!(remote_image_url: "https://res.cloudinary.com/db926f0zb/image/upload/v1504778560/2281_drzuyv.jpg", event: event_2)
+
+# Registrations
+Registration.create!(event: event_1, user: laura, price: 24.95, total: 24.95, guests_count: 1)
+Registration.create!(event: event_2, user: laura, price: 7.50, total: 15, guests_count: 2)
+Registration.create!(event: event_3, user: laura, price: 4.95, total: 14.85, guests_count: 3)

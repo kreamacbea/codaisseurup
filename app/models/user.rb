@@ -13,4 +13,7 @@ class User < ApplicationRecord
   def full_name
     profile.full_name
   end
+
+  has_many :registrations, dependent: :destroy
+  has_many :registered_events, through: :registrations, source: :event
 end
