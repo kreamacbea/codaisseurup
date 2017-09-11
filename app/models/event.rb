@@ -15,6 +15,12 @@ class Event < ApplicationRecord
     order :price
   end
 
+  def self.order_by_name
+    order(name: :asc)
+  end
+
+  scope :published, -> { where(:published == true) }
+
   has_many :photos
   has_many :registrations, dependent: :destroy
   has_many :guests, through: :registrations, source: :user
