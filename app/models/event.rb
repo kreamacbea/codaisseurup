@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_and_belongs_to_many :themes
 
   validates :name, presence: true
@@ -21,7 +21,7 @@ class Event < ApplicationRecord
 
   scope :published, -> { where(:published == true) }
 
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :registrations, dependent: :destroy
   has_many :guests, through: :registrations, source: :user
 end
