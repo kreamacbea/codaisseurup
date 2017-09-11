@@ -1,5 +1,4 @@
-class Api::BookingsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+class Api::BookingsController < Api::BaseController
   before_filter :set_event
 
   def create
